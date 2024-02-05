@@ -1,0 +1,122 @@
+molecule_ID,MOL_ID,molecule_name,target_name,target_ID,drugbank_ID,validated,SVM_score,RF_score
+273,MOL000273,"(2R)-2-[(3S,5R,10S,13R,14R,16R,17R)-3,16-dihydroxy-4,4,10,13,14-pentamethyl-2,3,5,6,12,15,16,17-octahydro-1H-cyclopenta[a]phenanthren-17-yl]-6-methylhept-5-enoic acid",Mineralocorticoid receptor,252,737,,0.94817,0.7
+273,MOL000273,"(2R)-2-[(3S,5R,10S,13R,14R,16R,17R)-3,16-dihydroxy-4,4,10,13,14-pentamethyl-2,3,5,6,12,15,16,17-octahydro-1H-cyclopenta[a]phenanthren-17-yl]-6-methylhept-5-enoic acid",Nuclear receptor coactivator 2,3276,6241,,0.82078,0.7
+275,MOL000275,trametenolic acid,Mineralocorticoid receptor,252,737,,0.94787,0.704
+278,MOL000278,Beta-Glucan,Pancreatic alpha-amylase,622,4513,,0.8627,0.718
+279,MOL000279,Cerevisterol,Mineralocorticoid receptor,252,737,,0.929737,0.706
+282,MOL000282,"ergosta-7,22E-dien-3beta-ol",Progesterone receptor,209,614,,0.91728,0.736
+283,MOL000283,Ergosterol peroxide,Progesterone receptor,209,614,,0.82436,0.72
+284,MOL000284,L-uridine,Prostaglandin G/H synthase 2,94,290,,0.84247,0.742
+284,MOL000284,L-uridine,Carbonic anhydrase II,117,357,,0.84779,0.778
+284,MOL000284,L-uridine,Thymidine kinase,1218,2559,,0.88209,0.732
+286,MOL000286,β-amyrin acetate,Prostaglandin G/H synthase 1,6,20,,0.848862,0.766
+286,MOL000286,β-amyrin acetate,Prostaglandin G/H synthase 2,94,290,,0.897683,0.844
+286,MOL000286,β-amyrin acetate,Amine oxidase [flavin-containing] B,565,3939,,0.953245,0.75
+286,MOL000286,β-amyrin acetate,Amine oxidase [flavin-containing] A,566,3941,,0.953167,0.718
+286,MOL000286,β-amyrin acetate,Lysozyme,1172,2300,,0.899155,0.704
+286,MOL000286,β-amyrin acetate,Thermolysin,1179,6285,,0.872297,0.704
+286,MOL000286,β-amyrin acetate,Chymotrypsinogen B,1696,6011,,0.859441,0.7
+288,MOL000288,pachyman,Pancreatic alpha-amylase,622,4513,,0.86474,0.71
+295,MOL000295,alexandrin,Prostaglandin G/H synthase 2,94,290,,0.820815,0.708
+295,MOL000295,alexandrin,Progesterone receptor,209,614,,0.885731,0.726
+295,MOL000295,alexandrin,Mineralocorticoid receptor,252,737,,0.912864,0.7
+295,MOL000295,alexandrin,Nuclear receptor coactivator 2,3276,6241,,0.828671,0.74
+295,MOL000295,alexandrin,Nuclear receptor coactivator 1,3279,6228,,0.8602,0.718
+295,MOL000295,alexandrin,Alcohol dehydrogenase 1C,727,517,,0.953865,0.722
+295,MOL000295,alexandrin,Lysozyme,1172,2300,,0.89077,0.704
+295,MOL000295,alexandrin,Nicotinate-nucleotide--dimethylbenzimidazole phosphoribosyltransferase,2262,2264,,0.934043,0.74
+295,MOL000295,alexandrin,Trypsin-3,3952,2886,,0.80196,0.706
+295,MOL000295,alexandrin,DNA topoisomerase II,287,817,,0.863176,0.714
+295,MOL000295,alexandrin,Prostaglandin G/H synthase 1,6,20,,0.917917,0.71
+295,MOL000295,alexandrin,"Glycogen phosphorylase, muscle form",350,1152,,0.938709,0.7
+295,MOL000295,alexandrin,Heat shock protein HSP 90,444,1939,,0.965325,0.718
+295,MOL000295,alexandrin,"Phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit, gamma isoform",491,2404,,0.946413,0.706
+296,MOL000296,hederagenin,Progesterone receptor,209,614,,0.925242,0.72
+296,MOL000296,hederagenin,Nuclear receptor coactivator 2,3276,6241,,0.820883,0.71
+296,MOL000296,hederagenin,Muscarinic acetylcholine receptor M3,16,51,,0.92733,0.738
+296,MOL000296,hederagenin,Muscarinic acetylcholine receptor M1,38,103,,0.929204,0.734
+296,MOL000296,hederagenin,Gamma-aminobutyric-acid receptor alpha-2 subunit,141,423,,0.961149,0.734
+296,MOL000296,hederagenin,Gamma-aminobutyric-acid receptor alpha-3 subunit,200,580,,0.939051,0.704
+296,MOL000296,hederagenin,Muscarinic acetylcholine receptor M2,210,617,,0.943165,0.738
+296,MOL000296,hederagenin,Alpha-1B adrenergic receptor,216,632,,0.825742,0.708
+296,MOL000296,hederagenin,Gamma-aminobutyric acid receptor subunit alpha-1,309,872,,0.949762,0.756
+296,MOL000296,hederagenin,Glutamate receptor 2,3216,921,,0.916156,0.714
+296,MOL000296,hederagenin,Gamma-aminobutyric-acid receptor subunit alpha-6,3284,841,,0.926013,0.726
+296,MOL000296,hederagenin,Gamma-aminobutyric-acid receptor alpha-5 subunit,181,523,,0.957913,0.722
+296,MOL000296,hederagenin,Ig gamma-1 chain C region,1201,4785,,0.949295,0.724
+296,MOL000296,hederagenin,Alcohol dehydrogenase 1B,726,444,,0.906021,0.704
+296,MOL000296,hederagenin,Alcohol dehydrogenase 1C,727,517,,0.917391,0.736
+296,MOL000296,hederagenin,Lysozyme,1172,2300,,0.827519,0.714
+296,MOL000296,hederagenin,Nicotinate-nucleotide--dimethylbenzimidazole phosphoribosyltransferase,2262,2264,,0.887095,0.736
+296,MOL000296,hederagenin,Prostaglandin G/H synthase 1,6,20,,0.870005,0.728
+296,MOL000296,hederagenin,Sodium channel protein type 5 subunit alpha,70,220,,0.882886,0.714
+296,MOL000296,hederagenin,Prostaglandin G/H synthase 2,94,290,,0.859971,0.764
+296,MOL000296,hederagenin,Retinoic acid receptor RXR-alpha,158,459,,0.87522,0.724
+296,MOL000296,hederagenin,"CGMP-inhibited 3',5'-cyclic phosphodiesterase A",172,485,,0.909014,0.71
+296,MOL000296,hederagenin,Sodium-dependent noradrenaline transporter,186,540,,0.888942,0.72
+296,MOL000296,hederagenin,Cytochrome P450-cam,1143,2298,,0.901202,0.808
+298,MOL000298,ergosterol,Androgen receptor,48,146,,0.91551,0.794
+298,MOL000298,ergosterol,Progesterone receptor,209,614,,0.90497,0.738
+298,MOL000298,ergosterol,Glucocorticoid receptor,308,871,,0.89831,0.7
+298,MOL000298,ergosterol,Nuclear receptor coactivator 2,3276,6241,,0.812168,0.738
+298,MOL000298,ergosterol,7-dehydrocholesterol reductase,3493,34,validated,,
+299,MOL000299,Trimethyl citrate,Gamma-aminobutyric acid receptor subunit alpha-1,309,872,,0.84255,0.708
+301,MOL000301,2-lauroleic acid,Phospholipase A2,708,6500,,0.892954,0.706
+301,MOL000301,2-lauroleic acid,Ig gamma-1 chain C region,1201,4785,,0.920653,0.704
+301,MOL000301,2-lauroleic acid,3-oxoacyl-[acyl-carrier-protein] synthase 1,1491,889,,0.922914,0.712
+301,MOL000301,2-lauroleic acid,Ferrichrome-iron receptor,1306,2427,,0.85029,0.706
+301,MOL000301,2-lauroleic acid,Prostaglandin G/H synthase 1,6,20,,0.80243,0.74
+301,MOL000301,2-lauroleic acid,Nuclear receptor coactivator 2,3276,6241,,0.86413,0.716
+302,MOL000302,Undekansaeure,Phospholipase A2,708,6500,,0.91157,0.702
+302,MOL000302,Undekansaeure,Alcohol dehydrogenase 1C,727,517,,0.94296,0.702
+302,MOL000302,Undekansaeure,3-oxoacyl-[acyl-carrier-protein] synthase 1,1491,889,,0.95617,0.704
+303,MOL000303,caprylic acid,Phospholipase A2,708,6500,,0.876159,0.716
+303,MOL000303,caprylic acid,Alcohol dehydrogenase 1B,726,444,,0.925978,0.742
+303,MOL000303,caprylic acid,Alcohol dehydrogenase 1C,727,517,,0.94383,0.724
+303,MOL000303,caprylic acid,Acyl-CoA thioesterase I precursor,1535,3686,,0.856154,0.702
+303,MOL000303,caprylic acid,Trypsin-3,3952,2886,,0.945774,0.718
+303,MOL000303,caprylic acid,Interleukin-8,4303,h001,validated,,
+303,MOL000303,caprylic acid,Peroxisome proliferator-activated receptor alpha,4420,h001,validated,,
+303,MOL000303,caprylic acid,Histone acetyltransferase p300,4255,h001,validated,,
+303,MOL000303,caprylic acid,"Fatty acid-binding protein, liver",4201,h001,validated,,
+303,MOL000303,caprylic acid,Retinol-binding protein 2,4499,h001,validated,,
+304,MOL000304,Ethyl glucoside,Prostaglandin G/H synthase 1,6,20,,0.83335,0.726
+304,MOL000304,Ethyl glucoside,Prostaglandin G/H synthase 2,94,290,,0.8966,0.764
+304,MOL000304,Ethyl glucoside,Gamma-aminobutyric acid receptor subunit alpha-1,309,872,,0.97381,0.712
+304,MOL000304,Ethyl glucoside,Ig gamma-1 chain C region,1201,4785,,0.95708,0.72
+304,MOL000304,Ethyl glucoside,Glutamate receptor 2,3216,921,,0.93239,0.72
+305,MOL000305,lauric acid,Prostaglandin G/H synthase 1,6,20,,0.82742,0.706
+305,MOL000305,lauric acid,Cholinesterase,559,3923,,0.83359,0.704
+305,MOL000305,lauric acid,Phospholipase A2,708,6500,,0.91763,0.722
+305,MOL000305,lauric acid,Alcohol dehydrogenase 1B,726,444,,0.90692,0.7
+305,MOL000305,lauric acid,Alcohol dehydrogenase 1C,727,517,,0.93633,0.706
+305,MOL000305,lauric acid,Ig gamma-1 chain C region,1201,4785,,0.96438,0.716
+305,MOL000305,lauric acid,Ferrichrome-iron receptor,1306,2427,,0.93856,0.722
+305,MOL000305,lauric acid,3-oxoacyl-[acyl-carrier-protein] synthase 1,1491,889,,0.95661,0.744
+305,MOL000305,lauric acid,Prostaglandin G/H synthase 2,94,290,validated,0.805368,0.732
+305,MOL000305,lauric acid,Rhinovirus coat protein,709,6521,,0.835423,0.7
+305,MOL000305,lauric acid,Transcription factor p65,4565,h001,validated,,
+305,MOL000305,lauric acid,RAC-alpha serine/threonine-protein kinase,4490,h001,validated,,
+305,MOL000305,lauric acid,Interleukin-6,351,1159,validated,,
+305,MOL000305,lauric acid,Interleukin-8,4303,h001,validated,,
+305,MOL000305,lauric acid,Dual oxidase 2,4174,h001,validated,,
+305,MOL000305,lauric acid,T-lymphocyte activation antigen CD80,326,944,validated,,
+305,MOL000305,lauric acid,T-lymphocyte activation antigen CD86,325,942,validated,,
+305,MOL000305,lauric acid,Tumor necrosis factor receptor superfamily member 5,4587,h001,validated,,
+69,MOL000069,palmitic acid,Cathepsin D,363,1243,,0.924308,0.72
+69,MOL000069,palmitic acid,Alcohol dehydrogenase 1B,726,444,,0.906377,0.71
+69,MOL000069,palmitic acid,Alcohol dehydrogenase 1C,727,517,,0.923102,0.74
+69,MOL000069,palmitic acid,Prostaglandin G/H synthase 1,6,20,,0.84976,0.73
+69,MOL000069,palmitic acid,Prostaglandin G/H synthase 2,94,290,,0.81267,0.756
+69,MOL000069,palmitic acid,Rhodopsin,477,2207,,0.94961,0.704
+69,MOL000069,palmitic acid,Ig gamma-1 chain C region,1201,4785,,0.97902,0.726
+69,MOL000069,palmitic acid,Ferrichrome-iron receptor,1306,2427,,0.94011,0.714
+69,MOL000069,palmitic acid,Nuclear receptor coactivator 2,3276,6241,,0.93012,0.734
+69,MOL000069,palmitic acid,Apoptosis regulator Bcl-2,86,273,validated,,
+69,MOL000069,palmitic acid,Interleukin-10,4292,h001,validated,,
+69,MOL000069,palmitic acid,Tumor necrosis factor,265,777,validated,,
+69,MOL000069,palmitic acid,Collagen alpha-1(I) chain,731,28,validated,,
+69,MOL000069,palmitic acid,"Phosphatidylinositol-3,4,5-trisphosphate 3-phosphatase and dual-specificity protein phosphatase PTEN",4620,h001,validated,,
+69,MOL000069,palmitic acid,Putative beta-glucuronidase-like protein SMA3,4486,h001,validated,,
+69,MOL000069,palmitic acid,Solute carrier family 22 member 5,4532,h001,validated,,
+69,MOL000069,palmitic acid,Choline-phosphate cytidylyltransferase A,3542,677,validated,,

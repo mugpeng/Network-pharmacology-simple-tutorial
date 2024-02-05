@@ -1,0 +1,119 @@
+```{r}
+my_packages <- c("tidyverse", "data.table",
+                 "clusterProfiler", "org.Hs.eg.db")
+pacman::p_load(char = my_packages)
+
+tmp <- list()
+```
+
+# Prepare
+```{r}
+target_df4 <- readRDS(file = "Output/01/target_df4.Rds")
+```
+
+```{r}
+herb_df <- data.frame(
+  tcm = "Shen Ling Bai Zhu San",
+  herb = unique(target_df4$herb)
+)
+
+compound_df <- target_df4[,c("herb", "molecule_name")] %>% unique()
+
+target_df <- target_df4[,c("molecule_name", "GeneNames")] %>% unique()
+```
+
+```{r}
+ID_df <- data.frame(
+  "Source" = c(herb_df$tcm, compound_df$herb, target_df$molecule_name),
+  "Target" = c(herb_df$herb, compound_df$molecule_name, target_df$GeneNames)
+)
+```
+
+Type dataframe:
+```{r}
+anno_df <- data.frame(
+  term = c("Shen Ling Bai Zhu San", unique(herb_df$herb),
+           unique(compound_df$molecule_name),
+           unique(target_df$GeneNames)),
+  type = c("formula", rep("herb", length(unique(herb_df$herb))),
+           rep("compound", length(unique(compound_df$molecule_name))),
+           rep("target", length(unique(target_df$GeneNames)))
+           )
+)
+```
+
+```{r}
+table(anno_df$type)
+```
+
+csv may induce column error.
+
+```{r}
+# fwrite(ID_df, file = "Output/03/ID_df.csv", quote = T)
+# fwrite(anno_df, file = "Output/03/anno_df.csv")
+
+writexl::write_xlsx(ID_df, path = "Output/03/ID_df.xlsx")
+writexl::write_xlsx(anno_df, path = "Output/03/anno_df.xlsx")
+```
+
+See: `operation_cytoscape.md`
+
+# PPI
+```{r}
+fwrite(data.frame("x" =unique(target_df$GeneNames)), col.names = F, file = "Output/03/ppi_input.txt")
+```
+
+```{r}
+tsv <-  read.table("Input/String/string_interactions_short.tsv", comment.char = "!",header = T)
+tsv2 <-  tsv[,c(1,2,ncol(tsv))]
+head(tsv2)
+write.table(tsv2,
+            file = "Output/03/ppi_cyto.txt",
+            sep = "\t",
+            quote = F,
+            row.names = F)
+```
+
+```{r}
+ppi_top <- fread("Input/String/degree.csv")
+```
+
+# Enrichment
+```{r}
+marker <- bitr(ppi_top$Name, OrgDb = "org.Hs.eg.db", 
+                   fromType = "SYMBOL", toType = "ENTREZID")
+```
+
+```{r}
+KEGG <- enrichKEGG(gene = marker$ENTREZID,
+                      organism     = 'hsa',
+                      pvalueCutoff = 0.05,
+                      qvalueCutoff =0.05)
+KEGG_df <- KEGG@result
+```
+
+```{r}
+vec_toll <- strsplit("207/7124/3569/841", "/")[[1]]
+
+toll_df <- marker[marker$ENTREZID %in% vec_toll,]
+toll_df
+```
+
+```{r}
+cat(toll_df$SYMBOL, sep = "，")
+```
+
+# Select compounds
+```{r}
+target_df5 <- target_df4[target_df4$GeneNames %in% toll_df$SYMBOL,]
+
+table(target_df5$herb)
+```
+
+```{r}
+table(target_df5$molecule_name)
+```
+
+
+# Save
+

@@ -1,0 +1,10 @@
+# ignore
+# file
+.Rhistory
+.Rproj.user
+# dir
+/Article
+/Fake
+/Plot
+/Log
+/Others

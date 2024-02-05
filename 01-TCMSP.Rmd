@@ -1,0 +1,143 @@
+```{r}
+my_packages <- c("tidyverse", "data.table",
+                 "ggplot2", "ggpubr", "patchwork",
+                 "ggvenn")
+pacman::p_load(char = my_packages)
+
+tmp <- list()
+```
+
+# Preparation
+Shen Ling Bai Zhu San(SLBZS)
+
+## Uniprot
+```{r}
+# gancao_drug <- fread("Input/TCMSP/gancao/chemical_attr.csv")
+# gancao_target <- fread("Input/TCMSP/gancao/chemical_tar.csv")
+```
+
+Uniprot:
+```{r}
+uniprot_df <- fread("Input/uniprotkb_AND_model_organism_9606_AND_r_2024_01_22.tsv.gz")
+
+# table(gancao_target$target_name %in% uniprot_df$`Protein names`)
+```
+
+```{r}
+uniprot_df$ProteinNames <- gsub(" \\(.*", "", 
+                                   uniprot_df$`Protein names`)
+
+# table(gancao_target$target_name %in% uniprot_df$ProteinNames)
+# gancao_target$target_name[!gancao_target$target_name %in% uniprot_df$ProteinNames] %>% head()
+```
+
+Discard unmapped targets.
+
+```{r}
+uniprot_df <- separate(uniprot_df, col = `Gene Names`, into = c("GeneNames", "others"),sep = " ")
+```
+
+
+```{r}
+# gancao_target_sel <- gancao_target[!gancao_target$target_name %in% uniprot_df$ProteinNames,] 
+# gancao_target_sel_vec <- unique(gancao_target_sel$target_name)
+# 
+# test <- lapply(gancao_target_sel_vec, function(target){
+#   grep(target, uniprot_df$ProteinNames)
+# })
+```
+
+## TCMSP
+```{r}
+herbs <- dir("Input/TCMSP")
+herbs <- herbs[!herbs %in% c("gancao")]
+target_df <- lapply(herbs, function(x){
+  df <- fread(paste0("Input/TCMSP/", x, "/chemical_tar.csv"))
+  df$herb <- x
+  df
+})
+target_df <- do.call(rbind, target_df)
+
+attr_df <- lapply(herbs, function(x){
+  df <- fread(paste0("Input/TCMSP/", x, "/chemical_attr.csv"))
+  df$herb <- x
+  df
+})
+attr_df <- do.call(rbind, attr_df)
+```
+
+
+# Filter chemicals
+Ref: Gancao Nurish-Yin Decoction medicated serum inhibits growth and migration of ovarian cancer cells: Network pharmacology-based analysis and biological validation
+with cut off values for oral bioavailability (OB) ≥ 30% and drug-like properties (DL) ≥ 0.18.
+
+```{r}
+attr_df2 <- attr_df[attr_df$ob >= 30 & attr_df$dl >= 0.18,]
+```
+
+```{r}
+target_df2 <- target_df[target_df$MOL_ID %in% attr_df2$MOL_ID,]
+
+table(unique(target_df2[,c("herb", "molecule_name")])$herb)
+```
+
+# Merge with uniprot
+```{r}
+uniprot_df3 <- uniprot_df[,c(3,5,7)]
+
+target_df3 <- merge(target_df2, uniprot_df3, 
+                    by.x = "target_name", by.y = "ProteinNames")
+```
+
+```{r}
+table(unique(target_df3[,c("herb", "molecule_name")])$herb)
+```
+
+# Merge with disease genes
+genecard:
+```{r}
+genecard_df <- fread("Input/Target/GeneCards-SearchResults.csv")
+genecard_df2 <- genecard_df[genecard_df$`Relevance score` > 35,]
+```
+
+DisGeNET:
+```{r}
+disgenet_df <- fread("Input/Target/C0919267__C0029925__C0677886_disease_gda_evidences.tsv")
+disgenet_df2 <- disgenet_df[disgenet_df$Score_gda > .4,]
+```
+
+
+```{r}
+ovarian_genes <- unique(c(genecard_df2$`Gene Symbol`, disgenet_df2$Gene))
+
+target_df4 <- target_df3[target_df3$GeneNames %in% ovarian_genes,]
+
+length(unique(target_df4$GeneNames))
+table(unique(target_df4[,c("herb", "molecule_name")])$herb)
+```
+
+# ggVenn
+```{r}
+ovarian_genes_list <- list(
+  `SLBZS genes` = unique(target_df3$GeneNames),
+  `Ovarian cancer genes` = ovarian_genes
+)
+
+p1 <- ggvenn(ovarian_genes_list, set_name_size = 6)
+p1
+```
+
+```{r}
+ggsave(plot = p1,
+  filename = "Plot/p1.png",
+  width = 7,             
+  height = 7,           
+  units = "in",         
+  dpi = 300)
+```
+
+# Save
+```{r}
+saveRDS(target_df4, file = "Output/01/target_df4.Rds")
+```
+

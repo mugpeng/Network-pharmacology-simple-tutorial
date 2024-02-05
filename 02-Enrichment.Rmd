@@ -1,0 +1,78 @@
+```{r}
+my_packages <- c("tidyverse", "data.table",
+                 # "stringdist",
+                 "clusterProfiler", "org.Hs.eg.db")
+pacman::p_load(char = my_packages)
+
+tmp <- list()
+```
+
+
+# Cluster Profile
+```{r}
+target_df4 <- readRDS(file = "Output/01/target_df4.Rds")
+```
+
+
+```{r}
+marker <- bitr(target_df4$GeneNames, OrgDb = "org.Hs.eg.db", 
+                   fromType = "SYMBOL", toType = "ENTREZID")
+```
+
+```{r}
+GO <- enrichGO(gene = marker$ENTREZID,
+                   OrgDb= org.Hs.eg.db,
+                   ont = "ALL",
+                   pAdjustMethod = "BH",
+                   minGSSize = 1,
+                   pvalueCutoff = 0.05,
+                   readable = TRUE)
+GO_df <- GO@result
+
+KEGG <- enrichKEGG(gene = marker$ENTREZID,
+                      organism     = 'hsa',
+                      pvalueCutoff = 0.05,
+                      qvalueCutoff =0.05)
+KEGG_df <- KEGG@result
+```
+
+# Plot
+GO:
+```{r}
+p4 <- barplot(GO, split = "ONTOLOGY") +
+    facet_grid(ONTOLOGY~., scale = "free")
+p4
+```
+
+```{r}
+ggsave(plot = p4,
+  filename = "Plot/p4.png",
+  width = 10,             
+  height = 12,           
+  units = "in",         
+  dpi = 600)
+```
+
+
+KEGG:
+```{r}
+p5 <- dotplot(KEGG, showCategory = 15)
+p5
+```
+
+```{r}
+ggsave(plot = p5,
+  filename = "Plot/p5.png",
+  width = 8,             
+  height = 6,           
+  units = "in",         
+  dpi = 600)
+```
+
+```{r}
+# vec_toll <- strsplit("841/6416/3553/3569/3576/5594/1432/5595/5599/4792/6696/207/6772/5970/7124", "/")[[1]]
+# 
+# toll_df <- marker[marker$ENTREZID %in% vec_toll,]
+# toll_df
+```
+
